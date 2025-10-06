@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4a2831dbasbw"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_74nyl"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_da86f"]
+[ext_resource type="Script" path="res://scenes/machine.gd" id="3_0tdc6"]
+[ext_resource type="Script" path="res://scenes/terminal.gd" id="4_wae4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1byp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi652"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu1m6"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_74nyl")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(450, 158)
+script = ExtResource("1_da86f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_r1byp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+
+[node name="Machine" type="Area2D" parent="."]
+position = Vector2(169, 104)
+script = ExtResource("3_0tdc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Machine"]
+shape = SubResource("RectangleShape2D_gi652")
+
+[node name="Sprite2D" type="Sprite2D" parent="Machine"]
+
+[node name="Terminal" type="Area2D" parent="."]
+position = Vector2(158, 328)
+script = ExtResource("4_wae4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal"]
+shape = SubResource("RectangleShape2D_bu1m6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terminal"]
+
+[node name="ItemSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(172, 174)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="UI"]
+offset_left = 208.0
+offset_top = 85.0
+offset_right = 248.0
+offset_bottom = 108.0
+text = "MACHINE
+press E to interact with it 
+and spawn item"
+
+[node name="Label3" type="Label" parent="UI"]
+offset_left = 212.0
+offset_top = 313.0
+offset_right = 252.0
+offset_bottom = 336.0
+text = "TERMINAL
+Press E to interact with the terminal
+and deposit the item"
