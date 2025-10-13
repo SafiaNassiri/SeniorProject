@@ -56,17 +56,17 @@ func _update_animation(input_vector: Vector2):
 	else:
 		state = "walk"
 		if input_vector.x > 0 and input_vector.y > 0:
-			direction = "downright"
+			direction = "rightdown"
 		elif input_vector.x < 0 and input_vector.y > 0:
-			direction = "downleft"
+			direction = "leftdown"
 		elif input_vector.x > 0 and input_vector.y < 0:
-			direction = "upright"
+			direction = "rightup"
 		elif input_vector.x < 0 and input_vector.y < 0:
-			direction = "upleft"
+			direction = "leftup"
 		elif input_vector.x > 0:
-			direction = "right"
+			direction = "rightdown"  # use a fallback, e.g., rightdown
 		elif input_vector.x < 0:
-			direction = "left"
+			direction = "leftdown"   # fallback for left
 		elif input_vector.y > 0:
 			direction = "down"
 		elif input_vector.y < 0:
