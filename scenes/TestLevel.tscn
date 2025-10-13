@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkc4yf3t4glhk"]
+
+[ext_resource type="PackedScene" uid="uid://by4lkt3d8d78a" path="res://scenes/player.tscn" id="1_xclqy"]
+[ext_resource type="PackedScene" uid="uid://pd2xmwbf4kp7" path="res://scenes/ScavengeObject.tscn" id="2_eunyw"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_xclqy")]
+
+[node name="ScavengeObject" parent="." instance=ExtResource("2_eunyw")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
